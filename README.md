@@ -33,7 +33,7 @@ The general instructions are the following steps: (In the folllowing three secti
 ```
 caffe/build/tools/caffe train --solver solver.txt 2>&1 | tee train.log
 ```
-2. quantilize k x k filters (k > 1, for example often k = 3, 5, or at same time quantilize both 3 and 5) in the original model, we obtained the quantilized model. Note that we first fine-tune offset value to quantilize to from range(0.02, 0.09, 0.01);
+2. quantilize k x k filters (k > 1, for example often k = 3, 5, or at same time quantilize both 3 and 5) in the original model, we obtained the quantilized model. Note that we first fine-tune offset value to quantilize to from range(0.02, 0.09, 0.01); Theoretically we could omit this step but expeirmentally we find it can give better performance. 
 ```
 python quant_pattern.py --offeset 0.05 --models xxx_xxx.caffemodel
 ```
@@ -61,6 +61,38 @@ Then, we conducted the following experiments on the third version CIFAR-10 datas
 
 
 ## Experiments on ImageNet with GoogleNet
+You can find prototxt and solver files in googlenet/prototxt folder and resulting models and logs files in the corresponding models and logs folders as well. As illustrated in the Instruction part, we applied same procedure to googlenet on ImageNet.(Assume ImageNet downloaded and prepared).
+1. train googlenet using train_val.prototxt and quick_solver.prototxt 
+```
+caffe/builds/tools/caffe train --solver quick_solver.prototxt 2>&1 | tee googlenet_train_quick_solver_from_scratch_zl.log
+```
+As reference, you can check the log file from my training.  After entire training process we obtain caffe model: bvlc_googlenet_quick_iter_600000.caffemodel
+
+2. quantilize 1x1, 3x3, 5x5 or 3x3 and 5x5 filters using quant_pattern.py script
+```
+python quant_pattern.py --offset 0.09 --filter 1x1 --model bvlc_googlenet_quick_iter_600000.caffemodel
+```
+```
+python quant_pattern.py --offset 0.06 --filter 3x3 --model bvlc_googlenet_quick_iter_600000.caffemodel
+```
+```
+python quant_pattern.py --offset 0.05 --filter 5x5 --model bvlc_googlenet_quick_iter_600000.caffemodel
+```
+```
+python quant_pattern.py --offset 0.06 --filter 3x3 5x5 --model bvlc_googlenet_quick_iter_600000.caffemodel
+```
+The above offeset value we tune from range(0.02,0.09,0.01) as mentioned in the above. After this step, we obtain the following quantilized models:
+        googlenet_600000_quant_3x3_0.06.caffemodel
+        googlenet_600000_quant_5x5.caffemodel
+        googlenet_600000_quant_3x3_5x5_0.06.caffemodel
+        googlenet_600000_quant_projAll1x1_0.09.caffemodel
+those models could be found in googlenet/models folder as well. 
+
+       
+
+
+
+
 ## Experiments on ImageNet with Customized-InceptionNet
 ## Summary
 
