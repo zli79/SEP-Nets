@@ -82,11 +82,11 @@ python quant_pattern.py --offset 0.05 --filter 5x5 --model bvlc_googlenet_quick_
 python quant_pattern.py --offset 0.06 --filter 3x3 5x5 --model bvlc_googlenet_quick_iter_600000.caffemodel
 ```
 The above offeset value we tune from range(0.02,0.09,0.01) as mentioned in the above. After this step, we obtain the following quantilized models:
-        googlenet_600000_quant_3x3_0.06.caffemodel
-        googlenet_600000_quant_5x5.caffemodel
-        googlenet_600000_quant_3x3_5x5_0.06.caffemodel
-        googlenet_600000_quant_projAll1x1_0.09.caffemodel
-those models could be found in googlenet/models folder as well. 
+1. googlenet_600000_quant_3x3_0.06.caffemodel
+2. googlenet_600000_quant_5x5.caffemodel
+3. googlenet_600000_quant_3x3_5x5_0.06.caffemodel
+4. googlenet_600000_quant_projAll1x1_0.09.caffemodel
+Those models could be found in googlenet/models folder as well. 
 
        
 
