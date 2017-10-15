@@ -86,6 +86,7 @@ The above offeset value we tune from range(0.02,0.09,0.01) as mentioned in the a
 2. googlenet_600000_quant_5x5.caffemodel
 3. googlenet_600000_quant_3x3_5x5_0.06.caffemodel
 4. googlenet_600000_quant_projAll1x1_0.09.caffemodel
+
 Those models could be found in googlenet/models folder as well. 
 
        
