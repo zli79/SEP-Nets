@@ -1,4 +1,4 @@
-# SEP-NETs
+# SEP-Nets
 This repository contains instroduction, instruction, models, prototxt and logs file along experiments for SEP-Nets introduced in the paper  ["SEP-Nets: Small and Effective Pattern Networks"](https://arxiv.org/pdf/1706.03912.pdf) by Zhe Li, Xiaoyu Wang, Xutao Lv, Tianbao Yang.
 
 ### Citting SEP-Nets
@@ -30,10 +30,17 @@ Figure 1: Procedure to apply pattern binarization technique
 
 The general instructions are the following steps: (In the folllowing three sections, we will give the detailed instructions)
 1. train original model using tain_val.prototxt and solver.txt, after training process we obtain the original model;
-
+```
+caffe/build/tools/caffe train --solver solver.txt 2>&1 | tee train.log
+```
 2. quantilize k x k filters (k > 1, for example often k = 3, 5, or at same time quantilize both 3 and 5) in the original model, we obtained the quantilized model. Note that we first fine-tune offset value to quantilize to from range(0.02, 0.09, 0.01);
-
-3. fine-tuneing the above quantilized models with fixed pattern (we simply set the learning rate for those convolution layer as 0) prototxt and solver file; 
+```
+python quant_pattern.py --offeset 0.05 --models xxx_xxx.caffemodel
+```
+3. fine-tune the above quantilized models with fixed pattern (we simply set the learning rate for those convolution layer as 0) prototxt and solver file; 
+```
+caffe/build/tools/caffe train --solver finetune_solver.txt --weights xxx_xxx_quant_0.05.caffemodel 2>&1 | tee fine_tune.log
+```
 
 ## Experiments on CIFAR10 with ResNet
 ## Experiments on ImageNet with GoogleNet
