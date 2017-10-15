@@ -14,9 +14,9 @@ If you are using SEP-Nets, please cite as folowing:
 ## Contents:
 1. [Introduction](#Introduction)
 2. [Instruction](#Instruction)
-3. [Experiments on CIFAR10 with ResNet](#Experiments on CIFAR10 with ResNet)
-4. [Experiments on ImageNet with GoogleNet](#Experiments on ImageNet with GoogleNet)
-5. [Experiments on ImageNet with Customized-InceptionNet](#Experiments on ImageNet with Customized-InceptionNet)
+3. [Experiments on CIFAR10 with ResNet](#Experiments-on-CIFAR10-with-ResNet)
+4. [Experiments on ImageNet with GoogleNet](#Experiments-on-ImageNet-with-GoogleNet)
+5. [Experiments on ImageNet with Customized-InceptionNet](#Experiments-on-ImageNet-with-Customized-InceptionNet)
 6. [Summary](#Summary)
 
 ## Introduction
