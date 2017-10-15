@@ -44,7 +44,7 @@ caffe/build/tools/caffe train --solver finetune_solver.txt --weights xxx_xxx_qua
 
 ## Experiments on CIFAR10 with ResNet
 In general, different data augumentation techniques results in different test accuracy. In order to obtain better performance, we train ResNet-20,ResNet-32, ResNet-44 and ResNet-55 on cifar10 dataset with three different augumentation techniques. 
-1. CIFAR-10 dataset download from [NIN] (https://gist.github.com/ebenolson/91e2cfa51fdb58782c26)
+1. CIFAR-10 dataset download from [NIN](https://gist.github.com/ebenolson/91e2cfa51fdb58782c26)
 2. CIFAR-10 dataset download from [Highway Network](https://github.com/flukeskywalker/highway-networks)
 3. CIFAR-10 dataset download from [Highway Network](https://github.com/flukeskywalker/highway-networks) using additional 4 pixels padded on each side of each image and with GCN preprocessed. 
 
@@ -58,9 +58,6 @@ The following is the comparison Top 1 and Top 5 test accuracy with cifar10 datas
 | ResNet-56 | 0.4555 <br /> 0.8322     | 0.9027 <br /> 0.9957     | 0.9375 <br /> 0.9977     |
 
 Then, we conducted the following experiments on the third version CIFAR-10 dataset.
-
-
-
 
 
 ## Experiments on ImageNet with GoogleNet
