@@ -59,6 +59,11 @@ The following is the comparison Top 1 and Top 5 test accuracy with cifar10 datas
 
 Then, we conducted the following experiments on the third version CIFAR-10 dataset.
 
+The following is comparison among original models, quantilized models, refined models on CIFAR-10 with ResNet.
+
+|Model | Acc | Ref | Full| BiPattern | Refined |
+|-----------|-------------------|-------------------|-------------------|-------------------|-------------------|
+|ResNet-20| Top 1 <br /> Top 5| 0.9125 <br /> - | 0.9118 <br /> 0.9974 | 0.1546 <br /> 0.5104| 0.8649 <br /> 0.9941| 
 
 ## Experiments on ImageNet with GoogleNet
 You can find prototxt and solver files in googlenet/prototxt folder and resulting models and logs files in the corresponding models and logs folders as well. As illustrated in the Instruction part, we applied same procedure to googlenet on ImageNet.(Assume ImageNet downloaded and prepared).
