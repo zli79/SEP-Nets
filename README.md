@@ -122,8 +122,8 @@ The following is the comparison of test accuracy among original googlenet models
 
 
 |Model | Acc | Ref | BiPattern | Refined | Multicrop|
-|-----------|-------------------|-------------------|-------------------|
-|googlenet| Top 1 <br /> Top 5| - <br /> 0.8993 | 1x1 pattern  <br /> 0.0013 <br /> 0.0075 | <br /> 0.6117 <br /> 0.8395 | <br /> 0.636 <br /> 0.856
+|-----------|-------------------|-------------------|-------------------|-------------------|-------------------|
+|googlenet| Top 1 <br /> Top 5| - <br /> 0.8993 | 1x1 pattern  <br /> 0.0013 <br /> 0.0075 | <br /> 0.6117 <br /> 0.8395 | <br /> 0.636 <br /> 0.856 |
 
 ## Experiments on ImageNet with Customized-InceptionNet
 ## Summary
