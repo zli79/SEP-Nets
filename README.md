@@ -43,7 +43,7 @@ caffe/build/tools/caffe train --solver finetune_solver.txt --weights xxx_xxx_qua
 ```
 
 ## Experiments on CIFAR10 with ResNet
-In general, different data augumentation techniques results in different test accuracy. In order to obtain better performance, we train ResNet-20,ResNet-32, ResNet-44 and ResNet-55 on cifar10 dataset with three different augumentation techniques. 
+In general, different data augumentation techniques result in different test accuracies. In order to obtain better performance, we train ResNet-20,ResNet-32, ResNet-44 and ResNet-55 on CIFAR-10 dataset with three different augumentation techniques. 
 1. CIFAR-10 dataset download from [NIN](https://gist.github.com/ebenolson/91e2cfa51fdb58782c26)
 2. CIFAR-10 dataset download from [Highway Network](https://github.com/flukeskywalker/highway-networks)
 3. CIFAR-10 dataset download from [Highway Network](https://github.com/flukeskywalker/highway-networks) using additional 4 pixels padded on each side of each image and with GCN preprocessed. 
@@ -67,6 +67,8 @@ The following is comparison among original models, quantilized models, refined m
 |ResNet-32| Top 1 <br /> Top 5| 0.9249 <br /> - | 0.9276 <br /> 0.9972 | 0.2634 <br /> 0.6932| 0.9021 <br /> 0.9962| 
 |ResNet-44| Top 1 <br /> Top 5| 0.9283 <br /> - | 0.9283 <br /> 0.9982 | 0.4825 <br /> 0.8765| 0.9145 <br /> 0.9965| 
 |ResNet-56| Top 1 <br /> Top 5| 0.9303 <br /> - | 0.9375 <br /> 0.9977 | 0.5382 <br /> 0.9574| 0.9302 <br /> 0.9971| 
+
+Ref is test accuracy reported in original paper; Full refers to test accuracy of models that I trained from scratch; BiPattern refers to test accuracy of models directly after quantilization; Refined refers to test accuracy of models after fine-tuning on quantilized models. 
 
 ## Experiments on ImageNet with GoogleNet
 You can find prototxt and solver files in googlenet/prototxt folder and resulting models and logs files in the corresponding models and logs folders as well. As illustrated in the Instruction part, we applied same procedure to googlenet on ImageNet.(Assume ImageNet downloaded and prepared).
