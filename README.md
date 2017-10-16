@@ -103,6 +103,8 @@ caffe/build/tools/caffe train --solver quick_solver_fix_5x5_pattern.prototxt --w
 caffe/build/tools/caffe train --solver quick_solver_fix_3x3_5x5_pattern.prototxt --weights googlenet_600000_quant_3x3_5x5_0.06.caffemodel 2>&1 | tee googlenet_fine_tune_quant_600000_caffemodel_fix_3x3_5x5_pattern_train.log
 ```
 As same as the above, you could find fine-tune log file in log foder, for examples, let's check googlenet_fine_tune_quant_600000_caffemodel_fix_3x3_pattern_train.log file, 
+
+
         I0409 18:10:46.352432 12840 solver.cpp:311] Iteration 600000, loss = 1.67377
         I0409 18:10:46.352474 12840 solver.cpp:331] Iteration 600000, Testing net (#0)
         I0409 18:12:03.574512 12849 data_layer.cpp:73] Restarting data prefetching from start.
