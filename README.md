@@ -136,7 +136,8 @@ The following is the comparison of test accuracy among original googlenet models
 |googlenet| Top 1 <br /> Top 5| - <br /> 0.8993 | 1x1 pattern  <br /> 0.0013 <br /> 0.0075 <br /> 3x3 pattern  <br /> 0.3706 <br /> 0.6290 <br /> 5x5 pattern  <br /> 0.5141 <br /> 0.7619 <br /> 3x3 and 5x5 pattern  <br /> 0.1428 <br /> 0.3173 |  <br /> 0.6117 <br /> 0.8395<br /> <br /> 0.66797 <br /> 0.8827<br /> <br /> 0.6917 <br /> 0.8904 <br /> <br /> 0.6694 <br /> 0.8550 | <br /> 0.636 <br /> 0.856 <br /> <br /> 0.636 <br /> 0.856 <br /><br /> 0.636 <br /> 0.856 <br /><br /> 0.636 <br /> 0.856 |
 
 ## Experiments on ImageNet with Customized-InceptionNet
-## Summary
+## Contacts
+If you have any questions, suggestions, please feel free to send email to zhe-li-1 at uiowa.edu!
 
 
 
