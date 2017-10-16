@@ -89,9 +89,19 @@ The above offeset value we tune from range(0.02,0.09,0.01) as mentioned in the a
 
 Those models could be found in googlenet/models folder as well. 
 
-       
-
-
+3. fine-tuning the above quantilized models using train_val_fix_xxx_pattern.prototxt and quick_solver_fix_xxx_pattern.prototxt
+```
+caffe/build/tools/caffe train --solver quick_solver_fix_1x1_pattern.prototxt --weights googlenet_600000_quant_projAll1x1_0.09.caffemodel 2>&1 | tee googlenet_fine_tune_quant_600000_caffemodel_fix_Proj1x1_pattern_train.log
+```
+```
+caffe/build/tools/caffe train --solver quick_solver_fix_3x3_pattern.prototxt --weights googlenet_600000_quant_3x3_0.06.caffemodel 2>&1 | tee googlenet_fine_tune_quant_600000_caffemodel_fix_3x3_pattern_train.log
+```
+```
+caffe/build/tools/caffe train --solver quick_solver_fix_5x5_pattern.prototxt --weights googlenet_600000_quant_5x5.caffemodel 2>&1 | tee googlenet_fine_tune_quant_600000_caffemodel_fix_5x5_pattern_train.log
+```
+```
+caffe/build/tools/caffe train --solver quick_solver_fix_3x3_5x5_pattern.prototxt --weights googlenet_600000_quant_3x3_5x5_0.06.caffemodel 2>&1 | tee googlenet_fine_tune_quant_600000_caffemodel_fix_3x3_5x5_pattern_train.log
+```
 
 
 ## Experiments on ImageNet with Customized-InceptionNet
