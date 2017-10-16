@@ -102,7 +102,25 @@ caffe/build/tools/caffe train --solver quick_solver_fix_5x5_pattern.prototxt --w
 ```
 caffe/build/tools/caffe train --solver quick_solver_fix_3x3_5x5_pattern.prototxt --weights googlenet_600000_quant_3x3_5x5_0.06.caffemodel 2>&1 | tee googlenet_fine_tune_quant_600000_caffemodel_fix_3x3_5x5_pattern_train.log
 ```
+As same as the above, you could find fine-tune log file in log foder, for examples, let's check googlenet_fine_tune_quant_600000_caffemodel_fix_3x3_pattern_train.log file, 
+        I0409 18:10:46.352432 12840 solver.cpp:311] Iteration 600000, loss = 1.67377
+        I0409 18:10:46.352474 12840 solver.cpp:331] Iteration 600000, Testing net (#0)
+        I0409 18:12:03.574512 12849 data_layer.cpp:73] Restarting data prefetching from start.
+        I0409 18:12:03.837461 12840 solver.cpp:398]     Test net output #0: loss1/loss1 = 1.77901 (* 0.3 = 0.533704 loss)
+        I0409 18:12:03.837510 12840 solver.cpp:398]     Test net output #1: loss1/top-1 = 0.57818
+        I0409 18:12:03.837514 12840 solver.cpp:398]     Test net output #2: loss1/top-5 = 0.816221
+        I0409 18:12:03.837522 12840 solver.cpp:398]     Test net output #3: loss2/loss2 = 1.4836 (* 0.3 = 0.44508 loss)
+        I0409 18:12:03.837525 12840 solver.cpp:398]     Test net output #4: loss2/top-1 = 0.63776
+        I0409 18:12:03.837528 12840 solver.cpp:398]     Test net output #5: loss2/top-5 = 0.859861
+        I0409 18:12:03.837535 12840 solver.cpp:398]     Test net output #6: loss3/loss3 = 1.36136 (* 1 = 1.36136 loss)
+        I0409 18:12:03.837539 12840 solver.cpp:398]     Test net output #7: loss3/top-1 = 0.679699
+        I0409 18:12:03.837543 12840 solver.cpp:398]     Test net output #8: loss3/top-5 = 0.882702
+        I0409 18:12:03.837548 12840 solver.cpp:316] Optimization Done.
+        I0409 18:12:03.926012 12840 caffe.cpp:259] Optimization Done.
 
+The following is the comparison of test accuracy among original googlenet models, quantilized modeds and fine-tuned models. 
+Model | Acc | Ref | BiPattern | Refined | Multicrop
+googlenet| Top 1 <br /> Top 5| - <br /> 0.8993 | 1x1 pattern  <br /> 0.0013 <br /> 0.0075 | <br /> 0.6117 <br /> 0.8395 | <br /> 0.636 <br /> 0.856
 
 ## Experiments on ImageNet with Customized-InceptionNet
 ## Summary
